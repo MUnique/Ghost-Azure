@@ -89,8 +89,8 @@ function getPostSchema(metaData, data) {
         },
         headline: escapeExpression(metaData.metaTitle),
         url: metaData.url,
-        datePublished: metaData.publishedDate,
-        dateModified: metaData.modifiedDate,
+        datePublished: new Date(metaData.publishedDate.getFullYear(), metaData.publishedDate.getMonth(), metaData.publishedDate.getDate()),
+        dateModified: new Date(metaData.modifiedDate.getFullYear(), metaData.modifiedDate.getMonth(), metaData.modifiedDate.getDate()),
         image: schemaImageObject(metaData.coverImage),
         keywords: metaData.keywords && metaData.keywords.length > 0 ?
             metaData.keywords.join(', ') : null,
