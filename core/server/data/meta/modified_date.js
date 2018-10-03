@@ -9,7 +9,7 @@ function getModifiedDate(data) {
     if (data[context]) {
         modDate = data[context].updated_at || null;
         if (modDate) {
-            return new Date(modDate).toISOString();
+            return new Date(new Date(modDate.getFullYear(), modDate.getMonth(), modDate.getDate())).toISOString();
         }
     }
     return null;
